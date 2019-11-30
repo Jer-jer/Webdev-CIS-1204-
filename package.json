@@ -19,5 +19,13 @@
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jer-jer/Webdev-CIS-1204-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jer-jer/Webdev-CIS-1204-/issues"
+  },
+  "homepage": "https://github.com/Jer-jer/Webdev-CIS-1204-#readme",
   "description": ""
 }
