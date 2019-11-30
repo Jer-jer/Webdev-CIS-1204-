@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=sinnerap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+.navbar-custom { background-color: #FFCA2A !important;}
+.nav-link {
+	color: #28a745 !important;
+}
+body {
+	   background: #FFFFFF; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 93% 128%;
+    font-family: 'Muli', sans-serif !important;
+}
+.w3-animate-opacity2{
+  animation:opac 1s !important;
+}
+.w3-animate-opacity3{
+  animation:opac 3s !important;
+   background-color: transparent !important;
+  border-color: transparent !important; 
+}
+.container {
+  display:flex;
+  flex-direction:column;
+}
+
+h2 {
+    text-shadow: 2px 2px #FFC000;
+	color:#0C620F;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h5 {
+	color:#0C620F !important;
+}
+h3{
+	text-shadow: 1px 1px #FFC000;
+	color:#0C620F;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    margin-top: 1em !important;
+}
+.line{
+  height:2px;
+  border:none;
+  color:#333;
+  opacity: 0.8;
+  background-color:#28a745;
+  box-shadow: 2px 2px #FFC000;
+  margin-top: 0.9em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width:120px;
+}
+#text {
+  font-weight:250;
+  font-size:3em;
+  margin:0;
+}
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.first-box {
+  width:300px; 
+  float:left; 
+  height: 150px;
+  margin: 20px;
+}
+
+.second-box {
+  width:420px; 
+  height: 150px; 
+  float:right; 
+  background: transparent;
+  margin: 50px;
+}
+
+h5{
+	text-align: left !important;
+	font-family: 'Muli', sans-serif !important;
+	font-size: 16px !important;
+	/*text-shadow: 1px 1px #000000 ;*/
+	color:black !important;
+	font-weight: bold !important;
+}
+.form-control{
+	background-color: #F5F8F4 !important;
+}
+.innersecond {
+	float:right !important;
+	margin-right: -203px !important;
+	text-align: right !important;
+}
+.map{
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+#img-link, #img-link img{
+   text-decoration: none !important;
+   border:0px !important;
+   outline:none;
+   border-width: 0px;
+   outline-width:0px;
+   border-bottom: none;
+}

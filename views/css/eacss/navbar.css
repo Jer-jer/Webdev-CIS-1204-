@@ -1,0 +1,78 @@
+#uaanav{
+    width:68px;
+    height:27px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
+}
+#l-logo{
+    height:inherit;
+    padding:1rem 0.75rem;
+    position:relative;
+
+}
+.navbar-light{
+    background-color:#ece628!important;
+}
+.navbar{
+    padding-left:0px!important;
+    padding-top:0px!important;
+    padding-bottom:0px!important;
+    height:50px;
+}
+a.my-active{
+    background-color:#8cc63f!important;
+    color:white!important;  
+}
+.nav-link-dd{
+    padding-bottom:15px!important;
+    padding-top:12px!important;
+    color:black!important;
+}
+.nav-link-dd:hover{
+    background-color:#8cc63f!important;
+    color:white!important;
+    transition: 0.15s;
+}
+#green{
+    top:-1px;
+    height:8px;
+    width:100%;
+    background-color:#8cc63f;
+}
+.arrow{
+    margin-left:5px!important;
+}
+.d-menu{
+    background-color:#FFCA00!important;
+    border-radius:0px!important;
+
+    margin-top:0px;   
+}
+.right-pic{
+    position:absolute;
+    right:0;
+    margin-right:30px;
+}
+.pic-tr{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+.pic-tr:hover{
+    box-shadow: 0 0 10px rgb(33, 95, 33);
+    transition: 0.25s;
+}
+.drop-hover:hover{
+    background-color:#366F1F!important;
+    color:white!important;
+    font-weight:bold;
+}
+.d-mymenu{
+    border:0!important;
+}
+.dp{
+    top:53px!important;
+    left:-100px!important;
+}
