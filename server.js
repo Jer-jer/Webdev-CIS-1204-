@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 
 const indexRouter = require('./routes/index')
 const userRouter = require('./routes/users')
+const homeRouter = require('./routes/home')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname +'/views')
@@ -28,5 +29,6 @@ db.once('open', () => console.log('Successfully Connected to Mongoose Server'))
 
 app.use('/', indexRouter)
 app.use('/users', userRouter)
+app.use('/layouts', homeRouter)
 
 app.listen(process.env.PORT || 3000)
