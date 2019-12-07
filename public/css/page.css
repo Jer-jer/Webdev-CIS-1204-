@@ -1,13 +1,17 @@
+@import '../shared/fonts.css';
 .navbar-custom { background-color: #FFCA2A !important;}
 .nav-link {
 	color: #28a745 !important;
 }
 body {
-	   background: #FFFFFF; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 70% 155%;
+  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  overflow: scroll;
+	background: #FFFFFF; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 70% 155%;
 }
 
 #intro {
@@ -37,7 +41,7 @@ h1 {
 h4 {
 	color:#4A9E29;
 	font-family: 'Muli', sans-serif;
-	margin-top: : 20px;
+	margin-top:  20px;
 	margin-bottom: 10px;
 }
 
@@ -60,8 +64,8 @@ h4 {
 }
 
 #text {
-  font-weight:400;
-  font-size:3em;
+  font-weight:600;
+  font-size:50px;
   margin:0;
 }
 
@@ -143,7 +147,7 @@ h4 {
 .card4 { /*center*/
     float: right; 
     width: 156px;
-   margin-left: :50px;
+    margin-left: 50px;
     margin-right: 50px;
 }
 body
@@ -203,7 +207,8 @@ body
   font-weight:100;
   margin:20px 0 0 0;
   font-style:italic;
-   transform: translateX(200px);
+  transform: translateX(200px);
+  font-size: 30px;
 }
 .tile p
 {
@@ -241,7 +246,13 @@ body
   transform:translateX(0);
   opacity:1;
 }
-
+.desc{
+  font-size: 24px!important;
+  padding-bottom: 4px;
+}
+title-text{
+  font-size: 50px;
+}
 
 
 @media (max-width: 1000px) {

@@ -1,3 +1,8 @@
+@import '../shared/fonts.css';
+#nabar{
+    font-family: 'Red Hat Display';
+    font-size: 15px;
+}
 #uaanav{
     width:68px;
     height:27px;
@@ -6,9 +11,16 @@
     left: 50%;
     transform: translate(-50%,-50%);  
 }
+.nav-space{
+    padding-left: 9px!important;
+    padding-right: 9px!important;
+}
+#navbar{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 #l-logo{
     height:inherit;
-    padding:1rem 0.75rem;
+    padding:10px 10px;
     position:relative;
 
 }
@@ -45,10 +57,10 @@ a.my-active{
     margin-left:5px!important;
 }
 .d-menu{
-    background-color:#FFCA00!important;
+    background-color:#8cc63f!important;
     border-radius:0px!important;
-
     margin-top:0px;   
+    font-size: 15px;
 }
 .right-pic{
     position:absolute;
@@ -65,9 +77,8 @@ a.my-active{
     transition: 0.25s;
 }
 .drop-hover:hover{
-    background-color:#366F1F!important;
-    color:white!important;
-    font-weight:bold;
+    background-color:#ece628!important;
+    color:black!important;
 }
 .d-mymenu{
     border:0!important;
@@ -75,4 +86,8 @@ a.my-active{
 .dp{
     top:53px!important;
     left:-100px!important;
+}
+.dropdown-item{
+    color: white!important;
+    padding: 5px 35px 5px 11px!important;
 }

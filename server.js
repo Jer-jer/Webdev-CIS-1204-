@@ -16,6 +16,8 @@ app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
 app.use(express.static(__dirname +'/public'))
+app.use(express.static('stylesheets'))
+app.use(express.static(__dirname +'/stylesheets'))
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}))
 
 const mongoose = require('mongoose')
