@@ -24,14 +24,18 @@ app.use(express.static('stylesheets'))
 app.use(express.static(__dirname +'/stylesheets'))
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}))
 
+//Connect to mongoDB
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, { 
     useNewUrlParser: true
 })
 
 const db = mongoose.connection
-db.on('error', error => console.error(error))
-db.once('open', () => console.log('Successfully Connected to Mongoose Server'))
+db.once('open', function(){
+    console.log('Successfully Connected to Mongoose')
+}).on('error', function(error){
+    console.log('Error! Connection Failed:', error)
+})
 
 app.use('/', indexRouter)
 app.use('/users', userRouter)
