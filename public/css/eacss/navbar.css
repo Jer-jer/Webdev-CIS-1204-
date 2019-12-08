@@ -1,6 +1,6 @@
-@import '../shared/fonts.css';
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap');
 #nabar{
-    font-family: 'Red Hat Display';
+    font-family: 'Red Hat Display', sans-serif;
     font-size: 15px;
 }
 #uaanav{
@@ -14,9 +14,6 @@
 .nav-space{
     padding-left: 9px!important;
     padding-right: 9px!important;
-}
-#navbar{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #l-logo{
     height:inherit;
@@ -91,3 +88,6 @@ a.my-active{
     color: white!important;
     padding: 5px 35px 5px 11px!important;
 }
+.nav-space-special{
+    padding-right: 9px;
+  }

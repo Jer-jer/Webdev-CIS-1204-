@@ -7,11 +7,8 @@
 }
 body {
 	   background: #FFFFFF; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 93% 128%;
     font-family: 'Muli', sans-serif !important;
+    overflow: scroll;
 }
 .w3-animate-opacity2{
   animation:opac 1s !important;

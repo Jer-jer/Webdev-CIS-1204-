@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 .navbar-custom { background-color: #FFCA2A !important;}
+.main{
+  margin-top: 60px;
+}
 .nav-link {
 	color: #28a745 !important;
 }
@@ -217,3 +220,4 @@ h4 {
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
 }
+
