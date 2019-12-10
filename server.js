@@ -26,24 +26,10 @@ app.use(cors())
 app.use(expressLayouts)
 app.use(express.static('public'))
 app.use(express.static(__dirname +'/public'))
-app.use(express.static('articles/uploads'))
-app.use(express.static(__dirname + 'articles/uploads'))
+app.use(express.static('uploads'))
+app.use(express.static(__dirname + '/uploads'))
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: true}))
-app.use(express.static(path.join(__dirname, '..', 'articles/uploads')))
-
-// mongodb config
-// const MongoClient = mongodb.MongoClient
-// const url = 'mongodb://localhost:27017'
-// MongoClient.connect(url, {
-//     useUnifiedTopology: true, useNewUrlParser: true
-// }), (err, client) => {
-//     if(err) return console.log(err);
-
-//     db = client.db(`Images`)
-//     app.listen(3000, ()=> {
-//         console.log("Mongodb server at port 3000")
-//     })
-// }
+app.use(express.static(path.join(__dirname, '..', '/uploads')))
 
 //Connect to mongoDB
 const mongoose = require('mongoose')
