@@ -5,9 +5,12 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
+const cors = require('cors')
+const path = require('path')
+const mongodb = require('mongodb')
 
 const indexRouter = require('./routes/index')
-const userRouter = require('./routes/users')
+const articleRouter =  require('./routes/article')
 const homeRouter = require('./routes/home')
 const galleryRouter = require('./routes/gallery')
 const aboutusRouter = require('./routes/aboutus')
@@ -17,12 +20,30 @@ const aboutMembersRouter = require('./routes/aboutmem')
 app.set('view engine', 'ejs')
 app.set('views', __dirname +'/views')
 app.set('layout', 'layouts/layout')
+app.use(bodyParser.json())
+app.use(express.json())
+app.use(cors())
 app.use(expressLayouts)
 app.use(express.static('public'))
 app.use(express.static(__dirname +'/public'))
-app.use(express.static('stylesheets'))
-app.use(express.static(__dirname +'/stylesheets'))
-app.use(bodyParser.urlencoded({ limit: '20mb', extended: false}))
+app.use(express.static('articles/uploads'))
+app.use(express.static(__dirname + 'articles/uploads'))
+app.use(bodyParser.urlencoded({ limit: '20mb', extended: true}))
+app.use(express.static(path.join(__dirname, '..', 'articles/uploads')))
+
+// mongodb config
+// const MongoClient = mongodb.MongoClient
+// const url = 'mongodb://localhost:27017'
+// MongoClient.connect(url, {
+//     useUnifiedTopology: true, useNewUrlParser: true
+// }), (err, client) => {
+//     if(err) return console.log(err);
+
+//     db = client.db(`Images`)
+//     app.listen(3000, ()=> {
+//         console.log("Mongodb server at port 3000")
+//     })
+// }
 
 //Connect to mongoDB
 const mongoose = require('mongoose')
@@ -38,7 +59,7 @@ db.once('open', function(){
 })
 
 app.use('/', indexRouter)
-app.use('/users', userRouter)
+app.use('/articles', articleRouter)
 app.use('/layouts/home.ejs', homeRouter)
 app.use('/layouts/gallery.ejs', galleryRouter)
 app.use('/layouts/aboutus.ejs', aboutusRouter)

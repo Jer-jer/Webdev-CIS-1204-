@@ -10,6 +10,9 @@ body {
     font-family: 'Muli', sans-serif !important;
     overflow: scroll;
 }
+.main{
+  margin-top: 70px;
+}
 .w3-animate-opacity2{
   animation:opac 1s !important;
 }

@@ -1,0 +1,20 @@
+<!-- <label for="">Name</label>
+<input type="text" name="title" value="<%= article.title %>"> -->
+
+<div class="animated animatedFadeInUp fadeInUp">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Article Title</label>
+          <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Enter title here" value="<%= article.title %>">
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Description</label>
+          <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="15" aria-valuetext="<%= article.body %>"></textarea>
+        </div>
+      
+      <div class="form-group">
+            <label for="exampleFormControlTextarea1">Upload Images</label>
+      </div>
+      <input type="file" id="file-input" name="articleImage" accept="image/*" /> 
+    <div id="thumb-output"></div>
+</div>

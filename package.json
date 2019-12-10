@@ -12,11 +12,15 @@
   "dependencies": {
     "accesscontrol": "^2.2.1",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
+    "mongodb": "^3.3.5",
     "mongoose": "^5.7.13",
-    "node-pre-gyp": "^0.14.0"
+    "multer": "^1.4.2",
+    "node-pre-gyp": "^0.14.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
@@ -30,5 +34,5 @@
     "url": "https://github.com/Jer-jer/Webdev-CIS-1204-/issues"
   },
   "homepage": "https://github.com/Jer-jer/Webdev-CIS-1204-#readme",
-  "description": ""
+  "description": "For WEBDEV CIS 1204"
 }
