@@ -1,0 +1,29 @@
+<head>    
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="images/favi2.png">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <meta http="X-UA-Compatible" content="ie=edge">
+        <link href="css/articlesubmit.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/eacss/navbar.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Article Submission</title>
+    </head>
+    <%- include('../partials/navbar.ejs', {active: "Gallery"}) %>
+    <div class="main">
+        <center><h1>Edit Article</h1></center>
+        <div class="container">
+        <br>
+        <center>
+            <form action="articles/update/<%= article.id%>" method="POST" enctype="multipart/form-data">
+                <%- include('_form_fields')%>        
+                <div class="animated animatedFadeInUp fadeInUp">
+                    <div class="container2">
+                        <button class="btn-hover color-5" id="link" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </center>
+        </div>
+    </div>

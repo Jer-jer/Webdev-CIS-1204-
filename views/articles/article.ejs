@@ -1,0 +1,109 @@
+<head>
+    <link href="css/article.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<%- include('../partials/navbar.ejs', {active: "Gallery"}) %>
+<div class="container main">
+		<br>
+		<div class="w3-center w3-animate-opacity2">
+		<center><h3>Week of Welcome 2019</h3></center>
+		<!-- HOY ALLAN KANI NA PART I ADD-->
+		<center><h5>Sample A. Name 
+		 <i class="fa fa-trash" style="margin-left: 7px; color:#474747;" 
+			id="b4"></i></h5></center> 
+			
+		<!-- UNTIL HERE -->		
+
+
+		<div class="animated animatedFadeInUp fadeInUp">
+			<img src="images/sampleuaa2.jpg" class="wrapper"/>
+			<br>
+
+
+
+<!-- HOY ALLAN KANI NA PART I ADD-->		
+<div class="box">
+			<span class="edit">edit</span>
+			<span class="save">save</span>
+			<div class="text">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, s
+					ed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+					veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod
+					o consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+					um dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+					sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>Lorem ipsum dolo
+					r sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labori
+					s nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in v
+					oluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat c
+					upidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+</div>
+</div> 
+</div>
+<!-- UNTIL THIS PART-->
+
+
+
+	<div class="animated animatedFadeInUp fadeInUp">
+		<hr class="line">
+	</div>
+		<div class="container5">
+			<div class="animated animatedFadeInUp fadeInUp">
+				<div class="center-div">
+		  			<h6 class="question-text">What did you think of this article?</h6>
+					    <div class="top-emoji-divLeft">
+					      <img alt="" class="top-emoji" src="images/like.png" onclick="increment(1)" />
+					      <div class="emoji-count">
+					        <p id="emoji-1">0</p>
+					      </div>
+					    </div>
+		   				<div class="top-emoji-divCenter">
+					      <img alt="" class="top-emoji" src="images/dislike.png" onclick="increment(2)" />
+					      <div class="emoji-count">
+					        <p id="emoji-2">0</p>
+					      </div>
+					    </div>
+					    <div class="top-emoji-divRight">
+					      <img alt="" class="top-emoji" src="images/clap.png" onclick="increment(3)" />
+					      <div class="emoji-count">
+					        <p id="emoji-3">0</p>
+					      </div>
+					    </div>
+					    <div class="top-emoji-divRight2">
+					      <img alt="" class="top-emoji" src="images/laughing.png" onclick="increment(4)" />
+					      <div class="emoji-count">
+					        <p id="emoji-4">0</p>
+					      </div>
+					    </div>
+		  		<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<br>
+		<a class="fb-share-button" data-href="https://www.facebook.com/pg/USCAllAccess/photos/?tab=album&amp;album_id=2341736229251599&amp;ref=page_internal" data-layout="button_count" data-size="small"></a>
+		<a href="https://twitter.com/intent/tweet?button_hashtag=#UAA&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-text="I'm reading this RN!" data-url="https://twitter.com/USCAllAccess/status/1162389081680011264" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<br>
+	<div class="fb-comments" data-href="http://localhost:3000/articles/article" data-width="" data-numposts="5"></div>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/samplearticle.js"></script>
+<script type="text/javascript" src="js/swal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="js/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type=text/javascript>
+	function increment(id) {
+    var divName = "emoji-" + id;
+    var count = document.getElementById(divName).innerHTML;
+    count = parseInt(count);
+    count = count + 1;
+    document.getElementById(divName).innerHTML = count;  
+}
+	</script>

@@ -1,148 +1,172 @@
 const express = require('express')
 const router = express.Router()
-const multer = require('multer')
-const path = require('path')
-// const upload = multer({
-//     destination: 'uploads/',
-//     filename: function(req , file, cb){
-//         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-//     }
-// })
-
-// const upload = multer({
-//     destination: 'articles/uploads',
-//     filename: function(req , file, cb){
-//         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-//     }
-// })
+const mongoose = require('mongoose')
+const imgUpload = require('express-fileupload')
+const _ = require('lodash')
+const dataBase = require('../models/article')
 const Article = require('../models/article')
-
-// Set Image Storage
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, './uploads');
-    },
-    filename: function(req, file, cb) {
-        const now = new Date().toISOString(); const date = now.replace(/:/g, '-'); cb(null, date + file.originalname);
-    }
-});
-// const storage = multer.diskStorage({
-//     destination: function(req, file, cb){
-//         cb(null, 'articles/uploads')
-//     },
-//     filename: function(req, file, cb){
-//         // const now = new Date().toISOString()
-//         // const date = now.replace(/:/g, '-')
-//         // cb(null, date + path.extname(file.originalname))
-//         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-//     }
-//     // destination: 'articles/uploads/',
-//     // filename: function(req , file, cb){
-//     //     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-//     // }
-// })
-
-// Init Upload
-const upload = multer({
-    storage: storage
-})
-
-
-//All Articles (displays all the articles)
-router.get('/', (req, res) => {
-    try{
-        // res.render('articles/index') [goes to the index.ejs of articles]
-        res.send('Article Created and saved in Database')
-    }catch(err){
-        res.json({ message: err })
-    }
-})
-
 
 //New Articles (for displaying the form)
 router.get('/newarticle', (req, res) => {
     res.render('articles/newarticle', { article: new Article() })
 })
 
-//Create Article
-router.post('/', upload.single('articleImage'), async (req, res, next) => {
-    console.log(req.file)
-    const article = new Article({
-        title: req.body.title,
-        body: req.body.body,
-    })
-    // You can use this command
-    // article.save((err, newArticle) => {
-    //     if(err){
-    //         res.render('articles/newarticle', {
-    //             article: article,
-    //             errorMessage: 'Error creating Article'
-    //         })
-    //     } else{
-    //         // res.redirect(`articles/${newArticle.id}`)
-    //         res.redirect(`articles`)
-    //     }
-    // })
-
-    // Or this one, either way works, what's the difference? I have no idea
-    try{
-        const savedArticle = await article.save() 
-        res.json(savedArticle) // [Used to view the created data]
-        // res.redirect(`articles`)
-    }catch(err){
-        res.json({ message: err })
-    }
+router.get('/', (req, res) => {
+    res.render('articles/index')
 })
-/*router.post('/', (req, res) => {
-    const article = new Article({
-        name: req.body.name
-    })
-    article.save((err, newArticle) => {
-        if(err)
-        {
-            res.render('articles/newarticle', {
-                article: article
-                errorMessage: 'Error creating Article'
+
+//Open Specific Article
+router.get('/:id', (req, res) => {
+    const id = req.params.id
+
+    dataBase.findById(id, (error, foundArticle) => {
+        if(error){
+            console.log("Atay")
+            console.log(error)
+        }else{
+            res.render('articles/index', {
+                article: foundArticle
             })
-        } else
-        {
-            // res.redirect(`articles/${newArticle.id}`)
-            res.redirect(`articles`)
         }
     })
-})*/
+})
 
-//Get Specific Article
-router.get('/:articleId', async (req, res) => {
+// dataBase.create([
+//     {
+//         event: 'SAS Week 2019',
+//         title: 'Week of Welcome 2019',
+//         name: 'Monica Barrientos',
+//         body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, s ed do eiusmod tempor incididunt ut labore et dolore' +
+//         'magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod o' +
+//         'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' +
+
+//         'Lorem ipsum dolo r sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore' +
+//         'magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labori s nisi ut aliquip ex ea commodo' +
+//         'consequat. Duis aute irure dolor in reprehenderit in v oluptate velit esse cillum dolore eu fugiat nulla pariatur.' +
+//         'Excepteur sint occaecat c upidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//         images: {
+//             imgName: 'sasweek.jpg',
+//             mimetype: 'image/jpg',
+//             size: 123568,
+//         }
+//     },{
+//         event: 'Week of Welcome',
+//         title: 'Week of Welcome',
+//         name: 'Nicole Genon',
+//         body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, s ed do eiusmod tempor incididunt ut labore et dolore' +
+//         'magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod o' +
+//         'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cill um dolore eu fugiat nulla pariatur.' +
+//         'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' +
+        
+//         'Lorem ipsum dolo r sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore' +
+//         'magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labori s nisi ut aliquip ex ea commodo' +
+//         'consequat. Duis aute irure dolor in reprehenderit in v oluptate velit esse cillum dolore eu fugiat nulla pariatur.' +
+//         'Excepteur sint occaecat c upidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//         images: {
+//             imgName: 'sampleuaa2.jpg',
+//             mimetype: 'image/jpg',
+//             size: 2546862,
+//         }
+//     },
+// ])
+
+//Create Article
+router.post('/', async (req, res, next) => {
+    const imgFile = req.files.articleImage
+
+    let images = []
+    _.forEach(_.keysIn(imgFile), (key) => {
+        let photo = imgFile[key]
+
+        photo.mv('uploads/' + photo.name)
+
+        images.push({
+            imgName: photo.name,
+            mimetype: photo.mimetype,
+            size: photo.size
+        })
+    })
+    const article = new Article({
+        event: req.body.event,
+        title: req.body.title,
+        name: req.body.name,
+        body: req.body.body,
+        images: images
+    })
     try{
-        const article = await Article.findById(req.params.articleId)
-        res.send(article)
+        const savedArticle = await article.save()
+        res.redirect(`gallery/`)
     }catch(err){
-        res.json({ message: err })
+        res.json({ message: 'error!' })
     }
 })
+
+//Edit Article
+router.get('/edit/:id', (req, res) => {
+    const id = req.params.id
+
+    dataBase.findById(id, (error, foundArticle) => {
+        if(error){
+            console.log("Yawa")
+            console.log(error)
+        }else{
+            res.render('articles/edit', {
+                article: foundArticle
+            })
+        }
+    })
+})
+
+//Update Article
+router.post('/update/:id', (req, res) => {
+    const id = req.params.id
+    dataBase.findByIdAndUpdate(id, {
+        event: req.body.event,
+        title: req.body.title,
+        name: req.body.name,
+        body: req.body.body
+    }, (err, updatedArticle) => {
+        if(err){
+            console.log("Couldn't update Game")
+            console.log(err)
+        }else{
+            console.log('Article Updated' + updatedArticle)
+            res.redirect(`/gallery`)
+        }
+    })
+})
+
+router.get('/delete/:id', (req, res) => {
+    const id = req.params.id
+
+    dataBase.findByIdAndDelete(id, (err) => {
+        if(err){
+            console.log("Couldn't delete Game")
+            console.log(err)
+        }else{
+            res.redirect('/gallery')
+            console.log('Article deleted' + id)
+        }
+    })
+})
+// router.get('/:id/edit', (req, res) => {
+//     res.send('Edit Author', req.params.id)
+// })
+
+// router.put('/:id', (req, res) => {
+//     res.send('Update Author', req.params.id)
+// })
+
+// router.delete('/:id', (req, res) => {
+//     res.send('Delete Author', req.params.id)
+// })
+
 
 //Delete Article
 router.delete('/:articleId', async (req, res) => {
     try{
         const removeArticle = await Article.remove({ _id: req.params.articleId})
         res.json(removeArticle)
-    }catch(err){
-        res.json({ message: err})
-    }
-})
-
-//Update Article
-router.patch('/:articleId', async (req, res) => {
-    try{
-        const updateArticle = await Article.updateOne(
-            { _id: req.params.articleId }, 
-            { $set: {
-                title: req.body.title, 
-                body: req.body.body
-            }
-        })
-        res.json(updateArticle)
     }catch(err){
         res.json({ message: err})
     }

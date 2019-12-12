@@ -2,19 +2,34 @@
 <input type="text" name="title" value="<%= article.title %>"> -->
 
 <div class="animated animatedFadeInUp fadeInUp">
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Article Title</label>
-          <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Enter title here" value="<%= article.title %>">
+    <div class="form-group row">			
+        <label for="inputPassword3" class="col-sm-6 col-form-label" style="text-align: center;"></label>
+        <div class="col-sm-5">
+          <input type="text" name="event" class="form-control" id="inputPassword3" style="margin-right: 700px; margin-left: -230px;" placeholder="Event" value="<%= article.event %>"required>
+        </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-6 col-form-label" style="text-align: center;"></label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="inputPassword3" name="title" style="margin-right: -380px;" placeholder="Article Title" value="<%= article.title %>" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-6 col-form-label" style="text-align: center;"></label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="inputPassword3" name="name" style="margin-right: -380px;" placeholder="Name" value="<%= article.name %>" required>
+            </div>
         </div>
         
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Description</label>
-          <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="15" aria-valuetext="<%= article.body %>"></textarea>
+        <div class="form-group">  
+          <input type="text" class="form-control form-control-body" name="body" id="exampleFormControlTextarea1" height="20" placeholder="Write Body here" value="<%= article.body%>" required>                 
         </div>
       
       <div class="form-group">
             <label for="exampleFormControlTextarea1">Upload Images</label>
       </div>
-      <input type="file" id="file-input" name="articleImage" accept="image/*" /> 
+      <input type="file" id="file-input" name="articleImage" accept="image/*" multiple/> 
     <div id="thumb-output"></div>
 </div>

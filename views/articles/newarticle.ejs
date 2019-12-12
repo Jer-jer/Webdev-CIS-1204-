@@ -1,11 +1,3 @@
-<!--
-    <h1>New Article</h1>
-    <form action="/articles" method="POST">
-        
-        <a href="/articles">Cancel</a>
-        <button type="submit">Create</button>
-    </form>
--->
 <head>    
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/favi2.png">
@@ -24,7 +16,6 @@
     <div class="container">
     <br>
     <center>
-        <%= typeof msg != 'undefined'?msg:'' %>
         <form action="/articles" method="POST" enctype="multipart/form-data">
             <%- include('_form_fields')%>        
             <div class="animated animatedFadeInUp fadeInUp">

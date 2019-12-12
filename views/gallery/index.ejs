@@ -1,19 +1,20 @@
+<%- include('../partials/navbar.ejs', {active: "Gallery"}) %>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="container main">
 <br>
 <div class="w3-center w3-animate-opacity2">
-<h2 id="text">Gallery</h2>
+<h2 id="text" class="gallery">Gallery</h2>
 <div class="w3-center w3-animate-opacity3">
 <hr class="line">
 <button type="button" class="btn btn-success" id="buttn" onclick="window.location.href = 'articles/newarticle';">
   Add An Article</button>
-<div class="dropd">
+<div class="dropd">   
 <div class="selectWrapper">
-    <select class="selectBox" id="foo">
+    <select class="selectBox" id="foo" onchange="location = this.value">
         <option id="opt">Browse</option>
-        <option id="opt" value="sasweekgallery.html">SAS Week 2018</option>
-        <option id="opt" value="wowgallery.html">Week of Welcome</option>
-        <option id="opt" value=#>USC Days</option>
-        <option id="opt" value=#>CpE Week 2018</option>
+        <% for(var i = 0; i < articleList.length; i++) {%> 
+        <option id="opt" value="gallery/articlegallery/<%= articleList[i].id %>"><%= articleList[i].event%></option>
+        <% } %>
     </select>
 </div>
 </div>
