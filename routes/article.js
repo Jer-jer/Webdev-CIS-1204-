@@ -131,7 +131,7 @@ router.post('/update/:id', (req, res) => {
             console.log(err)
         }else{
             console.log('Article Updated' + updatedArticle)
-            res.redirect(`/gallery`)
+            res.redirect(`/articles/index/` + id)
         }
     })
 })
